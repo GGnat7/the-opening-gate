@@ -1,11 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The Opening Gate</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Opening Gate — Weekly Window</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #161310;
+    --line: #2A2520;
+    --line-soft: #3a3226;
+    --ivory: #EDE7D9;
+    --muted: #9C9284;
+    --muted-dim: #6E6558;
+    --gold: #B08D4F;
+    --gold-dim: #8a7350;
+    --icon: #5a4c30;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ivory);
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 24px; }
+
+  .arch-block { text-align: center; padding: 72px 24px 8px; }
+
+  .arch-block svg { margin: 0 auto; display: block; }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 16px 0 24px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .divider span.rule { width: 30px; height: 1px; background: var(--line-soft); }
+  .divider span.dot {
+    width: 5px; height: 5px; background: var(--gold);
+    transform: rotate(45deg); display: inline-block;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.25;
+    margin: 0 0 22px;
+  }
+
+  .lede {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: 420px;
+    margin: 0 auto 32px;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary, .btn-secondary {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    padding: 14px 26px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary { background: var(--gold); color: var(--bg); }
+  .btn-primary:hover { background: #c19c5c; }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--line-soft);
+  }
+  .btn-secondary:hover { border-color: var(--gold); }
+
+  .fine-print {
+    font-size: 12px;
+    color: var(--muted-dim);
+    font-style: italic;
+    margin: 16px 0 0;
+  }
+
+  .tiers {
+    max-width: 560px;
+    margin: 48px auto 0;
+    padding: 0 24px 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .tier {
+    text-align: center;
+    padding: 0 16px;
+    border-right: 1px solid var(--line);
+  }
+
+  .tier:last-child { border-right: none; }
+
+  .tier .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .tier .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--ivory);
+    margin-bottom: 4px;
+  }
+
+  .tier .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .tier .desc {
+    font-size: 12px;
+    color: var(--muted-dim);
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .tier svg { margin: 0 auto; display: block; }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px 56px;
+    border-top: 1px solid var(--line);
+  }
+
+  footer p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--muted-dim);
+    max-width: 420px;
+    margin: 24px auto 0;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 30px; }
+    .tiers { grid-template-columns: 1fr; gap: 32px; }
+    .tier { border-right: none; border-bottom: 1px solid var(--line); padding-bottom: 24px; }
+    .tier:last-child { border-bottom: none; }
+  }
+</style>
 </head>
 <body>
-  <h1>The Opening Gate</h1>
-  <p>Coming soon.</p>
+
+<div class="arch-block">
+  <svg width="130" height="160" viewBox="0 0 130 160">
+    <path d="M12 158 V64 C12 28 38 6 65 6 C92 6 118 28 118 64 V158" fill="none" stroke="#8a7350" stroke-width="1.2"/>
+    <line x1="65" y1="6" x2="65" y2="158" stroke="#3a3226" stroke-width="0.6" stroke-dasharray="1 4"/>
+  </svg>
+  <p class="eyebrow">The opening gate</p>
+  <div class="divider">
+    <span class="rule"></span><span class="dot"></span><span class="rule"></span>
+  </div>
+  <h1>Every week<br>opens a different window.</h1>
+  <p class="lede">Historical calendars and symbolic systems, read through an original framework — not tradition, not authority. Take what is useful. Set down the rest.</p>
+
+  <div class="cta-row">
+    <a href="#" class="btn-primary">DOWNLOAD THIS WEEK'S WINDOW →</a>
+    <a href="#" class="btn-secondary">ONE PERSONAL WINDOW</a>
+  </div>
+  <p class="fine-print">Free. No signup required for the weekly window.</p>
+</div>
+
+<div class="tiers">
+
+  <div class="tier">
+    <p class="num">I</p>
+    <p class="name">This week's window</p>
+    <p class="price">Free</p>
+    <p class="desc">Shared every Monday. For everyone.</p>
+    <svg width="26" height="16" viewBox="0 0 26 16">
+      <circle cx="13" cy="14" r="3" fill="none" stroke="#5a4c30" stroke-width="0.8"/>
+      <line x1="13" y1="10" x2="13" y2="4" stroke="#5a4c30" stroke-width="0.8"/>
+      <line x1="2" y1="14" x2="24" y2="14" stroke="#5a4c30" stroke-width="0.8"/>
+    </svg>
+  </div>
+
+  <div class="tier">
+    <p class="num">II</p>
+    <p class="name">Your personal window</p>
+    <p class="price">Free — one per person</p>
+    <p class="desc">Four questions. One reflection by email.</p>
+    <svg width="26" height="16" viewBox="0 0 26 16">
+      <path d="M15 5 A6 6 0 1 0 15 13 A5 5 0 1 1 15 5 Z" fill="#5a4c30"/>
+    </svg>
+  </div>
+
+  <div class="tier">
+    <p class="num">III</p>
+    <p class="name">Founding patron</p>
+    <p class="price">$7.99/mo, locked in</p>
+    <p class="desc">A window every week. Early essays. Ongoing work.</p>
+    <svg width="16" height="16" viewBox="0 0 16 16">
+      <path d="M8 0 L9.5 6.5 L16 8 L9.5 9.5 L8 16 L6.5 9.5 L0 8 L6.5 6.5 Z" fill="#5a4c30"/>
+    </svg>
+  </div>
+
+</div>
+
+<footer>
+  <p>This is not a religious, spiritual, therapeutic, or advisory service. It is offered as it is.</p>
+  <p>This project is intended for reflection and educational purposes. It is not medical, psychological, legal, financial, or religious advice.</p>
+</footer>
+
 </body>
 </html>
