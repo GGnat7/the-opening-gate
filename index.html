@@ -231,6 +231,98 @@
   .footer-links a:hover {
     text-decoration: underline;
   }
+
+  .window-footnote {
+    font-size: 11px;
+    color: var(--muted-dim);
+    text-align: center;
+    margin-top: 24px;
+    font-style: italic;
+  }
+
+  .journal-card-wrap {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .journal-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    border: 1px solid var(--gold);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .journal-card:hover {
+    background: rgba(176, 141, 79, 0.08);
+  }
+
+  .journal-icon { flex-shrink: 0; }
+
+  .journal-card-text { flex: 1; text-align: left; }
+
+  .journal-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .journal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--ivory);
+    margin-bottom: 4px;
+  }
+
+  .journal-desc {
+    font-size: 12px;
+    color: var(--muted-dim);
+    line-height: 1.4;
+  }
+
+  .journal-card-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--gold);
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .arrow { font-style: normal; }
+
+  .site-nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+
+  .site-nav a {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 3px;
+  }
+
+  .site-nav a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  @media (max-width: 480px) {
+    .site-nav { gap: 14px 18px; }
+  }
 </style>
 </head>
 <body>
@@ -244,6 +336,14 @@
   <div class="divider">
     <span class="rule"></span><span class="dot"></span><span class="rule"></span>
   </div>
+
+  <nav class="site-nav">
+    <a href="#this-week">Weekly Window</a>
+    <a href="#journal">Journal</a>
+    <a href="#personal-window">Personal Window</a>
+    <a href="/about.html">About</a>
+  </nav>
+
   <h1>Every week<br>opens a different window.</h1>
   <p class="lede">Historical calendars and symbolic systems, read through an original framework — not tradition, not authority. Take what is useful. Set down the rest.</p>
 
@@ -257,9 +357,29 @@
   <div id="window-content">
     <p class="window-loading">Loading this week's window...</p>
   </div>
+  <p class="window-footnote">This Window was generated using this week's historical calendar data and The Opening Gate's own interpretive framework.</p>
 </div>
 
-<div class="tiers">
+<div class="journal-card-wrap" id="journal">
+  <a href="/journal.html" class="journal-card">
+    <svg width="40" height="50" viewBox="0 0 40 50" class="journal-icon">
+      <rect x="1" y="1" width="38" height="48" fill="none" stroke="#B08D4F" stroke-width="1"/>
+      <line x1="8" y1="14" x2="32" y2="14" stroke="#5a4c30" stroke-width="0.8"/>
+      <line x1="8" y1="22" x2="32" y2="22" stroke="#5a4c30" stroke-width="0.8"/>
+      <line x1="8" y1="30" x2="24" y2="30" stroke="#5a4c30" stroke-width="0.8"/>
+    </svg>
+    <div class="journal-card-text">
+      <p class="journal-eyebrow">For daily use</p>
+      <p class="journal-title">The Opening Gate Journal — 2027</p>
+      <p class="journal-desc">365 days, one page at a time. The same framework, on paper.</p>
+    </div>
+    <div class="journal-card-price">
+      $11.99<span class="arrow"> →</span>
+    </div>
+  </a>
+</div>
+
+<div class="tiers" id="personal-window">
 
   <div class="tier">
     <p class="num">I</p>
@@ -314,3 +434,4 @@
 </script>
 </body>
 </html>
+
